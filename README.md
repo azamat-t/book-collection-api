@@ -37,8 +37,8 @@ This is a RESTful API for managing a collection of books. The API allows users t
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/book-api.git
-cd book-api
+git clone https://github.com/azamat-t/book-collection-api
+cd book-collection-api
 ```
 
 ### 2. Install Dependencies
