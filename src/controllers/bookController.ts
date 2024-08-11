@@ -1,23 +1,25 @@
 import { Request, Response } from 'express';
 import prisma from '../prismaClient';
 
-export const addBook = async (req: Request, res: Response) => {
-  const { title, author, publicationDate, genres } = req.body;
+export const addBook = async (req: any, res: Response) => {
+  const { title, author, genres } = req.body;
+  console.log(req.body);
   const userId = req.user.userId;
-
+  console.log(userId);
   try {
     const book = await prisma.book.create({
       data: {
         title,
         author,
-        publicationDate: new Date(publicationDate),
-        genres,
+        publicationDate: new Date(),
+        genres: [genres],
         userId,
       },
     });
 
     res.status(201).json(book);
   } catch (error) {
+    console.log(error);
     res.status(400).json({ error: 'Error adding book.' });
   }
 };
@@ -60,12 +62,13 @@ export const updateBook = async (req: Request, res: Response) => {
         title,
         author,
         publicationDate: new Date(publicationDate),
-        genres,
+        genres: [genres],
       },
     });
 
     res.json(book);
   } catch (error) {
+    console.log(error);
     res.status(400).json({ error: 'Error updating book.' });
   }
 };

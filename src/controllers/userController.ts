@@ -3,6 +3,7 @@ import prisma from '../prismaClient';
 import { hashPassword, comparePassword, generateToken } from '../utils/auth';
 
 export const registerUser = async (req: Request, res: Response) => {
+  console.log(req.body);
   const { username, email, password } = req.body;
 
   try {
@@ -19,6 +20,7 @@ export const registerUser = async (req: Request, res: Response) => {
 
     res.status(201).json(user);
   } catch (error) {
+    console.log(error);
     res.status(400).json({ error: 'Error creating user.' });
   }
 };
