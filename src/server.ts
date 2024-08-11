@@ -16,8 +16,8 @@ app.use(
   })
 );
 
-app.use('/users', userRoutes);
-app.use('/books', bookRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/books', bookRoutes);
 
 const PORT = process.env.PORT || 3000;
 

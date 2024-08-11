@@ -52,17 +52,17 @@ npm install
 Create a `.env` file in the root directory and add the following environment variables:
 
 ```env
-DATABASE_URL=postgresql://postgres:password@localhost:5432/mydb
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/bookdb
 JWT_SECRET=your_jwt_secret
 PORT=3000
 ```
 
 ### 4. Set Up PostgreSQL Database
 
-Ensure PostgreSQL is running and create a new database (e.g., `mydb`).
+Ensure PostgreSQL is running and create a new database (e.g., `bookdb`).
 
 ```sql
-CREATE DATABASE mydb;
+CREATE DATABASE bookdb;
 ```
 
 ### 5. Set Up Prisma
@@ -284,7 +284,3 @@ You can use tools like Postman, Insomnia, or curl to test the API endpoints.
 ## License
 
 This project is licensed under the MIT License.
-
----
-
-Let me know if you need any adjustments or further details!
